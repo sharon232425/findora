@@ -1,0 +1,536 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.student-dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #f8f6ff;
+  color: #29213b;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+
+.student-sidebar {
+  width: 245px;
+  min-width: 245px;
+  background: #ffffff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee8fa;
+}
+
+.student-sidebar h2 {
+  color: #7044bd;
+  font-size: 25px;
+  margin: 0 0 45px;
+}
+
+.sidebar-label {
+  color: #9990a9;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.sidebar-link,
+.sidebar-logout {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #5d536d;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-link.selected,
+.sidebar-link:hover {
+  background: #eee6ff;
+  color: #7044bd;
+}
+
+.sidebar-logout {
+  margin-top: auto;
+}
+
+/* Main dashboard */
+
+.student-main {
+  flex: 1;
+  padding: 35px;
+  min-width: 0;
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.student-header p {
+  color: #8a70bb;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.student-header h1 {
+  margin: 8px 0;
+  font-size: 28px;
+  color: #29213b;
+}
+
+.student-header span {
+  color: #82798e;
+}
+
+.student-avatar {
+  background: #7044bd;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+/* Welcome banner */
+
+.student-welcome {
+  background: linear-gradient(120deg, #7044bd, #a98be7);
+  color: white;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 20px rgba(112, 68, 189, 0.12);
+}
+
+.student-welcome h2 {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+.student-welcome p {
+  color: white;
+  opacity: 0.9;
+}
+
+/* Item cards */
+
+.section-heading {
+  margin-bottom: 20px;
+  color: #29213b;
+}
+
+.student-item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.student-item-card {
+  background: white;
+  border: 1px solid #eee8fa;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(50, 30, 80, 0.04);
+  transition: 0.2s;
+}
+
+.student-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(50, 30, 80, 0.09);
+}
+
+.item-emoji {
+  font-size: 45px;
+  background: #f2edff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.lost-tag,
+.found-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.lost-tag {
+  background: #fff0ed;
+  color: #d65b47;
+}
+
+.found-tag {
+  background: #e7f8ed;
+  color: #27864a;
+}
+
+.student-item-card h3 {
+  margin: 0 0 10px;
+  color: #29213b;
+}
+
+.student-item-card p,
+.student-item-card small {
+  display: block;
+  color: #82798e;
+  margin-bottom: 9px;
+}
+
+.student-item-card button {
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  padding: 11px;
+  margin-top: 12px;
+  background: #7044bd;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.student-item-card button:hover,
+.submit-claim:hover {
+  background: #59329e;
+}
+
+/* Claims section */
+
+.claims-section {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #eee8fa;
+}
+
+.claims-section h2 {
+  color: #29213b;
+  margin-bottom: 10px;
+}
+
+.claims-section > p {
+  color: #82798e;
+}
+
+.empty-claims {
+  text-align: center;
+  background: #faf8ff;
+  border-radius: 15px;
+  padding: 40px 20px;
+  margin-top: 25px;
+}
+
+.empty-claims span {
+  font-size: 40px;
+}
+
+.empty-claims h3 {
+  color: #493d5c;
+}
+
+.empty-claims p {
+  color: #82798e;
+}
+
+.empty-claims button {
+  background: #7044bd;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.claims-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.claim-card {
+  background: #faf8ff;
+  padding: 22px;
+  border-radius: 13px;
+  border: 1px solid #eee8fa;
+}
+
+.claim-card h3 {
+  color: #7044bd;
+  margin-bottom: 12px;
+}
+
+.claim-card p {
+  margin: 8px 0;
+  color: #82798e;
+}
+
+.pending-tag {
+  display: inline-block;
+  margin-top: 10px;
+  background: #fff4d9;
+  color: #9b6a00;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Claim popup */
+
+.claim-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 20, 45, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.claim-modal {
+  position: relative;
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 18px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.claim-modal h2 {
+  color: #7044bd;
+  margin-bottom: 12px;
+}
+
+.claim-modal p {
+  color: #82798e;
+  margin-bottom: 15px;
+}
+
+.selected-item-name {
+  font-weight: bold;
+  color: #7044bd !important;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: #f2edff;
+  color: #7044bd;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.claim-modal label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: 600;
+  color: #493d5c;
+}
+
+.claim-modal input,
+.claim-modal textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ded5ed;
+  border-radius: 9px;
+  font: inherit;
+  outline: none;
+}
+
+.claim-modal input:focus,
+.claim-modal textarea:focus {
+  border-color: #7044bd;
+}
+
+.claim-modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-claim {
+  width: 100%;
+  padding: 13px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 9px;
+  background: #7044bd;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+  .student-dashboard {
+    flex-direction: column;
+  }
+
+  .student-sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+  }
+
+  .student-sidebar h2 {
+    margin-bottom: 15px;
+  }
+
+  .sidebar-logout {
+    margin-top: 10px;
+  }
+
+  .student-main {
+    padding: 20px;
+  }
+
+  .student-header h1 {
+    font-size: 22px;
+  }
+}
+
+/* STUDENT SEARCH AND FILTERS */
+
+.student-search-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 14px;
+  margin: 25px 0;
+  padding: 18px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(65, 39, 100, 0.05);
+}
+
+.student-search-section input,
+.student-search-section select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #e5def0;
+  border-radius: 9px;
+  background: #fdfcff;
+  color: #39245f;
+  outline: none;
+  font-size: 13px;
+}
+
+.student-search-section input:focus,
+.student-search-section select:focus {
+  border-color: #9871ce;
+  box-shadow: 0 0 0 3px #eee6fa;
+}
+
+/* ITEM PHOTOS */
+
+.student-item-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.student-item-description {
+  color: #827990;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.student-no-results {
+  background: white;
+  border-radius: 15px;
+  padding: 45px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.student-no-results span {
+  font-size: 42px;
+}
+
+.student-no-results h3 {
+  color: #39245f;
+  margin: 12px 0;
+}
+
+.student-no-results p {
+  color: #898197;
+  font-size: 14px;
+}
+
+.student-no-results button {
+  margin-top: 12px;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #68449c;
+  color: white;
+  cursor: pointer;
+}
+
+/* ITEM DETAILS POPUP */
+
+.student-modal-photo {
+  width: 100%;
+  max-height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.claim-modal > p {
+  color: #756b83;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.lost-item-note {
+  padding: 12px;
+  background: #fff5ec;
+  color: #b76b39 !important;
+  border-radius: 9px;
+  margin-top: 15px;
+}
+
+.pending-tag.approved {
+  background: #e5f7ed;
+  color: #27965b;
+}
+
+.pending-tag.rejected {
+  background: #fff0f0;
+  color: #d34d5a;
+}
+
+@media (max-width: 700px) {
+  .student-search-section {
+    grid-template-columns: 1fr;
+  }
+
+  .student-item-photo {
+    height: 160px;
+  }
+}

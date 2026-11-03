@@ -1,0 +1,83 @@
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f4efff, #e6dcff);
+  font-family: Arial, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 15px 45px rgba(80, 50, 130, 0.12);
+}
+
+.back-home {
+  color: #7953d9;
+  text-decoration: none;
+}
+
+.login-card h1 {
+  color: #39245e;
+  margin-top: 30px;
+}
+
+.login-card p {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.role-switch {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.role-switch button {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ded3f8;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+.role-switch button.active {
+  background: #7953d9;
+  color: white;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card label {
+  color: #39245e;
+  font-weight: bold;
+}
+
+.login-card input {
+  padding: 13px;
+  border: 1px solid #ddd3f0;
+  border-radius: 9px;
+  outline-color: #7953d9;
+  margin-bottom: 12px;
+}
+
+.login-submit {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #7953d9;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
