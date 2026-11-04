@@ -22,7 +22,6 @@ function Login() {
         return
       }
 
-      // Frontend demo navigation
       navigate('/student-dashboard')
     } else {
       if (!adminEmail.trim() || !password.trim()) {
@@ -30,7 +29,6 @@ function Login() {
         return
       }
 
-      // Frontend demo navigation
       navigate('/admin-dashboard')
     }
   }
@@ -40,11 +38,19 @@ function Login() {
       <div className="login-card">
 
         <Link to="/" className="back-home">
-          ← Back to Home
+          <span>←</span> Back to Home
         </Link>
 
-        <h1>Welcome to Findora 💜</h1>
-        <p>Find your belongings, find your way back.</p>
+        <div className="login-brand">
+          <span className="login-brand-icon">F</span>
+          <span>Findora<span className="login-brand-dot">.</span></span>
+        </div>
+
+        <div className="login-heading">
+          <span className="login-eyebrow">COLLEGE LOST & FOUND PORTAL</span>
+          <h1>Welcome back</h1>
+          <p>Sign in to access the Findora platform.</p>
+        </div>
 
         <div className="role-switch">
           <button
@@ -52,7 +58,7 @@ function Login() {
             className={role === 'student' ? 'active' : ''}
             onClick={() => setRole('student')}
           >
-            Student
+            Student Login
           </button>
 
           <button
@@ -60,7 +66,7 @@ function Login() {
             className={role === 'admin' ? 'active' : ''}
             onClick={() => setRole('admin')}
           >
-            Admin
+            Admin Login
           </button>
         </div>
 
@@ -68,80 +74,84 @@ function Login() {
 
           {role === 'student' ? (
             <>
-              <label htmlFor="registrationNumber">
-                Registration Number
-              </label>
+              <div className="form-group">
+                <label htmlFor="registrationNumber">
+                  Registration Number
+                </label>
+                <input
+                  id="registrationNumber"
+                  type="text"
+                  placeholder="Enter your registration number"
+                  value={registrationNumber}
+                  onChange={(e) => setRegistrationNumber(e.target.value)}
+                  required
+                />
+              </div>
 
-              <input
-                id="registrationNumber"
-                type="text"
-                placeholder="Enter registration number"
-                value={registrationNumber}
-                onChange={(e) => setRegistrationNumber(e.target.value)}
-                required
-              />
-
-              <label htmlFor="dateOfBirth">
-                Date of Birth
-              </label>
-
-              <input
-                id="dateOfBirth"
-                type="date"
-                value={dateOfBirth}
-                onChange={(e) => setDateOfBirth(e.target.value)}
-                required
-              />
+              <div className="form-group">
+                <label htmlFor="dateOfBirth">Date of Birth</label>
+                <input
+                  id="dateOfBirth"
+                  type="date"
+                  value={dateOfBirth}
+                  onChange={(e) => setDateOfBirth(e.target.value)}
+                  required
+                />
+              </div>
             </>
           ) : (
             <>
-              <label htmlFor="adminEmail">
-                Admin Email
-              </label>
-
-              <input
-                id="adminEmail"
-                type="email"
-                placeholder="Enter admin email"
-                value={adminEmail}
-                onChange={(e) => setAdminEmail(e.target.value)}
-                required
-              />
-
-              <label htmlFor="password">
-                Password
-              </label>
-
-              <div className="password-wrapper">
+              <div className="form-group">
+                <label htmlFor="adminEmail">Admin Email</label>
                 <input
-                  id="password"
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  id="adminEmail"
+                  type="email"
+                  placeholder="Enter your admin email"
+                  value={adminEmail}
+                  onChange={(e) => setAdminEmail(e.target.value)}
                   required
                 />
+              </div>
 
-                <button
-                  type="button"
-                  className="password-toggle"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? 'Hide' : 'Show'}
-                </button>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+
+                <div className="password-wrapper">
+                  <input
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? 'Hide' : 'Show'}
+                  </button>
+                </div>
               </div>
             </>
           )}
 
           <button type="submit" className="login-submit">
-            Login →
+            Sign In <span>→</span>
           </button>
-
         </form>
 
+        <div className="login-divider"></div>
+
         <p className="login-footer">
-          Every lost item deserves a way home. 💜
+          College Lost & Found Management System
         </p>
+
+        <Link to="/" className="login-home-link">
+          Return to Findora Homepage
+        </Link>
 
       </div>
     </div>
